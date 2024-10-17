@@ -1,0 +1,17 @@
+Automation Job : We do it when we need to execute a task everyday. 
+				Used to setup mutitask which we want to repeat on daily task.
+Diff b/w this and Schedule: Scheduling is for caching purpose. This is to execute a task.
+
+Before scheduling it, we need to create the automation job from the automation job service builder in the analyst tool.
+For a job to execute, the file part of it must have the automation service system account user in it's permitted user list
+Whenever we create a job, 1st job is to open file from library.
+Select the open file from library and add it.
+Now to make the file open in automation job, the Automation services system account user must have access to that folder.
+Browse the analysis file path and Load it.
+
+Next once it is loaded, we can go for other jobs required.
+
+Now to schedule the automation job, go to automation services in web client.
+Click on schedule a job
+Choose the automation job u created.
+select the time. and save. 
