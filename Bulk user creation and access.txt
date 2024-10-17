@@ -1,0 +1,62 @@
+BULK USER CREATION:
+
+1. Pre-Checks:
+Verify User Information: Ensure all user details are accurate and comply with company policy.
+Approval Verification: Check if the request has been approved by the product owner/manager.
+External Users (If Applicable): If external users are being added, ensure there is proper justification (e.g., why the users need access to the environment).
+2. Process:
+Step 1: Data Formatting
+Open the provided Excel sheet with user information. The required format for Spotfire user import is as follows:
+
+User name;Domain name;password;display name;email
+Here, User name;Domain name;password are the mandatory fields. Rest is optional.
+Examples:
+
+8584;SPOTFIRE;8584;Sourav Kumar;sourav.kumar@gmail.com
+6523;SPOTFIRE;6523;Charan Teja;charan.g@gmail.com
+Use the following Excel formula to format the user details:
+
+=C2&";SPOTFIRE;"&C2&";"&A2&" "&B2&";"&D2
+Step 2: Create Document File
+Copy the formatted data into a .txt document. Ensure no extra spaces are at the bottom of the file.
+
+Step 3: Importing Users
+Follow these steps to import users:
+
+Login to the Spotfire Analyst Tool (using Prod/Non-Prod server URL and your admin credentials).
+Navigate to Tools → Administration Manager → Import → Import Users.
+Browse and select the .txt file you created.
+Check the option to include passwords and select Clear Text.
+Click Import Users to complete the process.
+3. Post-Checks:
+Login Verification: Test the login for one of the added users to ensure successful access to the environment.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+BULK USER ACCESS
+
+Step 1: Data Formatting
+Open the provided Excel sheet with the user information. The required format for Spotfire group import is as follows:
+
+Group name;User name;user
+Examples:
+
+Engine_consumer;8584;user
+enginee_author;6523;user
+Use the following Excel formula to format the user details:
+
+="Group Name;"&A2&";user"
+Step 2: Create Document File
+Copy the formatted data into a .txt document. Ensure there are no extra spaces at the bottom of the file.
+
+Step 3: Importing
+Follow these steps to import the users into groups:
+
+Login to the Spotfire Analyst Tool (using the Prod/Non-Prod server URL and your admin credentials).
+Navigate to Tools → Administration Manager → Import → Import Groups.
+Browse and select the .txt file you created.
+Check the option to include member users.
+Click Import Groups to complete the process.
+3. Post-Checks:
+Login to the Spotfire Admin Console.
+Go to Groups and search for the group (e.g., Engine_consumer, enginee_author).
+Verify that all users have been added to the specified group as per the request.
